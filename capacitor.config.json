@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "traxie",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

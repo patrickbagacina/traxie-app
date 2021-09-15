@@ -1,0 +1,7 @@
+{
+  "name": "traxie",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

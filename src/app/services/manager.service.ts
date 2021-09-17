@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ApiException } from '../apis/exceptions';
 import { ManagersApi } from '../apis/managers-api';
 import { ManagerModel } from '../models/manager';
 import { Storage, StorageService } from './storage.service';
@@ -11,11 +12,13 @@ export class ManagerService {
 
   }
   
-  async login(email: string, password: string): Promise<ManagerModel> {
+  async login(email: string, password: string) {
     const res = await this.api.login(email, password);
 
     // save access_token to storage
-    this.storage.setItem(Storage.ACCESS_TOKEN, res.access_token);
+    if (!(res instanceof ApiException)) {
+      this.storage.setItem(Storage.ACCESS_TOKEN, res.access_token);
+    }
 
     return res;
   }

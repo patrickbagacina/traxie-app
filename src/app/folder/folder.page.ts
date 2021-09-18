@@ -19,7 +19,6 @@ export class FolderPage implements OnInit {
 
   async login() {
     try {
-      console.log('>>>>LOGING IN')
       const res = await this.managerSvc.login('bagacina@gmail.com', 'test1234');
 
       if (res instanceof BadRequestException) {

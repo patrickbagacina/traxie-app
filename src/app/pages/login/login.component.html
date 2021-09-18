@@ -1,0 +1,89 @@
+<ion-grid>
+  <ion-row>
+    <ion-col class="ion-margin-top">
+      <div class="ion-text-center">
+        <h1>Traxie</h1>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ng-container *ngIf="type === loginTypes.MANAGER">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-input></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+  
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label position="floating">Password</ion-label>
+                    <ion-input type="password"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+  
+              <ion-row>
+                <ion-col>
+                  <ion-button expand="block">
+                    Login
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+  
+              <ion-row>
+                <ion-col>
+                  <ion-button expand="block" fill="clear" size="small" (click)="setType(loginTypes.SCHOLAR)">
+                    Login as Scholar
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ng-container>
+        <ng-container *ngIf="type === loginTypes.SCHOLAR">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="ion-margin-top">
+                  <div class="ion-text-center">
+                    <h3>Please scan you QR code to login.</h3>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-button expand="block">
+                    Scan QR Code
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-button expand="block" color="light">
+                    Choose from Photo
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-button expand="block" fill="clear" size="small" (click)="setType(loginTypes.MANAGER)">
+                    Login as Manager
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ng-container>
+      </ion-card>
+            
+    </ion-col>
+  </ion-row>
+</ion-grid>

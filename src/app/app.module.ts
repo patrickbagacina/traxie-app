@@ -11,12 +11,18 @@ import { environment } from '../environments/environment';
 import { ManagerService } from './services/manager.service';
 import { ManagersApi } from './apis/managers-api';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+  ],
   entryComponents: [],
   imports: [
     BrowserModule, 
+    CommonModule,
     IonicModule.forRoot(), 
     AppRoutingModule, 
     ServiceWorkerModule.register('ngsw-worker.js', {
